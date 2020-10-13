@@ -1,0 +1,183 @@
+/*------VARIABLES------*/
+
+$negro: #111111;
+$blanco: #FEFEFE;
+$naranja: #ffa500;
+$rojo: #f14a60;
+.navbar {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background: #fff;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    flex-wrap: wrap;
+    position: fixed;
+    transition: .3s ease all;
+    box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    .logo {
+        height: 100%;
+        width: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & img {
+            width: 100px;
+        }
+    }
+    .dark-mode {
+        width: 10%;
+        display: flex;
+        justify-content: center;
+    }
+    .switch {
+        display: flex;
+        width: 60px;
+        height: 30px;
+        background: #343d5b;
+        border-radius: 1000px;
+        border: none;
+        position: relative;
+        outline: none;
+        cursor: pointer;
+        &::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            background: #f1f1f1;
+            top: 0;
+            left: 0;
+            right: unset;
+            border-radius: 100px;
+            transition: .3s ease all;
+            box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+        }
+        &.active {
+            background-color: $naranja;
+            color: #000;
+            &::after {
+                right: 0;
+                left: unset;
+            }
+        }
+        span {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            display: block;
+            background: none;
+            color: #fff;
+        }
+    }
+    ul {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        list-style: none;
+        li {
+            margin: 0 5px;
+            a {
+                color: #000;
+                text-decoration: none;
+                font-size: 17px;
+                font-weight: 200;
+                padding: 8px 15px;
+                border-radius: 5px;
+                letter-spacing: 1px;
+                transition: all 0.3s ease;
+                position: relative;
+                &::after {
+                    content: '';
+                    width: 0;
+                    height: 10px;
+                    background: $rojo;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: -22.5px;
+                    transition: .5s ease;
+                }
+                &:hover::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    & .menu-btn i {
+        color: #000;
+        font-size: 22px;
+        cursor: pointer;
+        display: none;
+    }
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.espacio {
+    height: 80px;
+}
+
+
+/*--------RESPONSIVE--------*/
+
+@media (max-width: 1000px) {
+    nav {
+        padding: 0 40px 0 50px;
+    }
+}
+
+@media (max-width: 920px) {
+    .navbar .menu-btn i {
+        display: block;
+    }
+    .navbar {
+        flex-flow: row-reverse;
+    }
+    .navbar .logo {
+        display: none;
+    }
+    #click:checked~.menu-btn i:before {
+        content: "\f00d";
+    }
+    .navbar ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background: #fff;
+        z-index: 1;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    #click:checked~ul {
+        left: 0;
+    }
+    .navbar ul li {
+        width: 100%;
+        margin: 40px 0;
+    }
+    .navbar ul li a {
+        width: 100%;
+        margin-left: -100%;
+        display: block;
+        transition: 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    #click:checked~ul li a {
+        margin-left: 0px;
+    }
+    .navbar ul li a.active,
+    .navbar ul li a:hover {
+        background: none;
+        font-weight: 400;
+    }
+}
