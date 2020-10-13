@@ -1,6 +1,6 @@
 /*------VARIABLES------*/
 
-$negro: #111111;
+$negro: #242323;
 $blanco: #FEFEFE;
 $naranja: #ffa500;
 $rojo: #f14a60;
@@ -17,6 +17,12 @@ $rojo: #f14a60;
     transition: .3s ease all;
     box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.2);
     z-index: 10;
+    body.dark & {
+        background: $negro;
+        ul li a {
+            color: $blanco;
+        }
+    }
     .logo {
         height: 100%;
         width: 10%;

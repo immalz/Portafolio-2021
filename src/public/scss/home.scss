@@ -6,3 +6,43 @@
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
 }
+
+.home {
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: #edf1fd;
+    position: relative;
+    background-size: 1330px;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-image: url("../images/bg.png");
+}
+
+.hero {
+    width: 500px;
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translate(-20%, -50%);
+    p {
+        color: #6c707c;
+        font-size: 16px;
+        margin: 20px 0;
+    }
+    h1 {
+        font-size: 40px;
+        margin: 0px;
+        font-weight: 900;
+        letter-spacing: 1px;
+        color: #292929;
+    }
+    .btnCV {
+        width: 200px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #292929;
+        color: #fff;
+    }
+}
