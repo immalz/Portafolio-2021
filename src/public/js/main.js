@@ -1,3 +1,8 @@
+window.onload = function() {
+    document.body.classList.add('loaded');
+}
+
+
 const btnSwitch = document.getElementById('switch');
 
 btnSwitch.addEventListener('click', () => {
