@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "dev": "nodemon src/index.js",
+        "start": "node src/index.js",
         "scss": "node-sass --watch src/public/scss/ -o src/public/css/"
     },
     "author": "Marco Alzamora Cueto",
